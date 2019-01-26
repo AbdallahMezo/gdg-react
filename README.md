@@ -1,3 +1,6 @@
+# gdg-react
+Starter code for react, PWA and google assistant codelab
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
