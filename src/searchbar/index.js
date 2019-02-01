@@ -4,10 +4,6 @@ import './searchbar.css'
 
 
 class SearchBar extends Component {
-  state = {
-    isOpened: false
-  }
-
   render () {
     return (
       <TextField

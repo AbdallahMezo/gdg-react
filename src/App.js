@@ -8,7 +8,7 @@ import {fetchWeather} from './api';
 import WeatherCard from './weathercard';
 class App extends Component {
   state = {
-    weatherData: {},
+    weatherData: null,
     isSearchBarOpened: false,
     isLoading: true
   }
@@ -29,17 +29,25 @@ class App extends Component {
     }
   }
 
-  setWeatherData = weatherData => this.setState(() => ({
-    weatherData: {
-      icon: weatherData.weather[0].icon,
-      temp: parseInt(weatherData.main.temp - 273.15),
-      pressure: weatherData.main.pressure,
-      hum: weatherData.main.humidity,
-      weatherStatus: weatherData.weather[0].main,
-      city: weatherData.name
-    },
-    isLoading: false,
-  }))
+  setWeatherData = data => this.setState(() => {
+      if (data.cod === 200) {
+        return {
+          weatherData: {
+            icon: data.weather[0].icon,
+            temp: parseInt(data.main.temp - 273.15),
+            pressure: data.main.pressure,
+            hum: data.main.humidity,
+            weatherStatus: data.weather[0].main,
+            city: data.name
+          },
+          isLoading: false,
+        }
+      }
+      return {
+        weatherData: null,
+        isLoading: false,
+      }
+  })
 
   componentDidMount = async () => {
     const weatherData = await this.getWeatherData('cairo') ;
