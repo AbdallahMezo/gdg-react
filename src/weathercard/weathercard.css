@@ -1,0 +1,32 @@
+.card-wrapper {
+  padding: 20px 0 20px 20px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.3)
+}
+
+.card-wrapper p {
+  margin: 0;
+}
+
+.top-info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.city-name {
+  font-size: 28px;
+  text-align: left;
+}
+.temp {
+  font-size: 56px;
+}
+
+.mid-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
